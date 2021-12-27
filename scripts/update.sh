@@ -84,6 +84,10 @@ clear
 ##################FIVEM USER CREATED############################################################
 
 #######################INSTALL FIVEM#####################################################
+###Dependency####
+sudo apt update
+sudo apt install curl
+######################
 cd /home/fivem/
 wget -O - https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/fivem.sh | bash
 sudo chmod +x fivem.sh
