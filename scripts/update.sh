@@ -94,8 +94,10 @@ sudo apt install curl -y
 ######################
 
 wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/fivem.sh -P /home/fivem/
+sudo chown fivem:fivem /home/fivem/fivem.sh
 sudo chmod +x /home/fivem/fivem.sh
 cd /home/fivem/
+sudo chmod u+w .
 sudo -u fivem ./fivem.sh
 pause
 #######################FIVEM INSTALLED####################################################
