@@ -21,7 +21,7 @@ echo $getnewversion
 echo
 echo "Converting to url ..."
 echo -e $TEXT_RESET
-newversion=$"${url}${getnewversion}"
+newversion="${url}${getnewversion}"
 echo -e $TEXT_YELLOW
 echo $newversion
 echo
