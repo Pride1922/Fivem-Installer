@@ -25,10 +25,10 @@ newversion=$"${url}${getnewversion}"
 echo -e $TEXT_YELLOW
 echo $newversion
 echo
-echo "Donwloading ..."
+echo "Downloading ..."
 echo
 echo -e $TEXT_RESET
-curl -O "$newversion"
+curl -O $newversion
 echo -e $TEXT_YELLOW
 echo "Installing..."
 echo -e $TEXT_RESET
