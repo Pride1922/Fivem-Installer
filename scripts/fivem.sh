@@ -1,9 +1,11 @@
 #!/bin/bash
 
+######################COLOURS################
 TEXT_RESET='\e[0m'
 TEXT_YELLOW='\e[0;33m'
 TEXT_RED='\e[1;31m'
 TEXT_BLUE='\e[1;34m'
+#######################COLOURS###################
 
 
 mkdir ~/fivem_server
