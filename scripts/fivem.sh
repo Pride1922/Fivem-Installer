@@ -20,24 +20,24 @@ echo
 echo -e $TEXT_YELLOW
 echo $getnewversion
 echo
-echo "Converting to url ..."
+echo 'Converting to url ...'
 echo -e $TEXT_RESET
 newversion="${url}${getnewversion}"
 echo -e $TEXT_YELLOW
 echo $newversion
 echo
-echo "Downloading ..."
+echo 'Downloading...'
 echo
 echo -e $TEXT_RESET
 curl -O $newversion
 echo -e $TEXT_YELLOW
-echo "Installing..."
+echo 'Installing...'
 echo -e $TEXT_RESET
 tar -xf fx.tar.xz -C /home/fivem/fivem_server/
 echo -e $TEXT_YELLOW
-echo "Removing the downloaded file"
+echo 'Removing the downloaded file'
 echo -e $TEXT_RESET
 rm fx.tar.xz
 echo -e $TEXT_BLUE
-echo "Installation finished."
+echo 'Installation finished.'
 echo -e $TEXT_RESET
