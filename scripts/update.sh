@@ -86,13 +86,27 @@ clear
 #######################INSTALL FIVEM#####################################################
 ###Dependency####
 echo -e $TEXT_RED
-echo 'We need to install Curl. This is a dependency'
+echo 'We need to install Curl and Mariadb.'
 echo -e $TEXT_RESET
 pause
 sudo apt update
 sudo apt install curl -y
+sudo apt install mariadb-server -y
 ######################
+################################MARIADB###################
+echo -e $TEXT_YELLOW
+echo 'Please create a password for the user root under Mariadb:'
+echo -e $TEXT_RESET
+read -sp 'Password:' SQLpassword
+mysql -u root <<-EOF
+UPDATE mysql.user SET Password=PASSWORD('$SQLpassword') WHERE User='root';
+DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
+DELETE FROM mysql.user WHERE User='';
+DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';
+FLUSH PRIVILEGES;
+EOF
 
+##########################################################
 wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/fivem.sh -P /home/fivem/
 sudo chown fivem:fivem /home/fivem/fivem.sh
 sudo chmod +x /home/fivem/fivem.sh
