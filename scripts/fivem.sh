@@ -42,3 +42,4 @@ rm fx.tar.xz
 echo -e $TEXT_BLUE
 echo 'Installation finished.'
 echo -e $TEXT_RESET
+rm /home/fivem/fivem.sh

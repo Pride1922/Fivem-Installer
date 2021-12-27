@@ -108,5 +108,3 @@ if [ -f /var/run/reboot-required ]; then
     echo -e $TEXT_RESET
     sudo reboot now
 fi
-
-pause
