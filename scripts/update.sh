@@ -36,7 +36,6 @@ sudo apt-get upgrade -y
 echo -e $TEXT_YELLOW
 echo 'APT upgrade finished...'
 echo -e $TEXT_RESET
-
 sudo apt-get autoremove -y
 echo -e $TEXT_YELLOW
 echo 'APT auto remove finished...'
@@ -44,6 +43,15 @@ echo -e $TEXT_RESET
 clear
 echo -e $TEXT_BLUE
 echo 'Server is updated... Moving on'
+pause
+###################################UPDATE FINISHED################################################
+
+###############CREATE ADMINISTRATOR###############################################################
+clear
+echo -e $TEXT_RED
+echo 'Create server administrator'
+echo -e $TEXT_RESET
+
 echo -e $TEXT_RESETecho -e $TEXT_YELLOW
 echo 'Adding new administrator: Please input username.'
 echo -e $TEXT_RESET
@@ -87,10 +95,3 @@ if [ -f /var/run/reboot-required ]; then
 fi
 
 pause
-###################################UPDATE FINISHED################################################
-
-###############CREATE ADMINISTRATOR###############################################################
-clear
-echo -e $TEXT_RED
-echo 'Create server administrator'
-echo -e $TEXT_RESET
