@@ -71,9 +71,12 @@ pause
 ##################ADMINISTRATOR CREATED############################################################
 
 ###############CREATE FIVEM USER###############################################################
+clear
 echo -e $TEXT_YELLOW
 echo 'We are gonna create an user without privileges: fivem'
+echo -e $TEXT_RESET
 sudo useradd -m -p fivem -s /bin/bash fivem
+echo -e $TEXT_RED
 echo 'User fivem is created. Password is also fivem'
 echo -e $TEXT_RESET
 pause
@@ -82,7 +85,8 @@ clear
 
 #######################INSTALL FIVEM#####################################################
 cd /home/fivem/
-wget -O - https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/fivem.sh?token=ALQ6F66HXIRNQY7Y75PPKJLBZGORK | bash
+wget -O - https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/fivem.sh | bash
+sudo chmod +x fivem.sh
 sudo -u fivem fivem.sh
 pause
 #######################FIVEM INSTALLED####################################################
@@ -90,7 +94,7 @@ pause
 if [ -f /var/run/reboot-required ]; then
     echo -e $TEXT_RED_B
     echo 'Reboot required!'
-    echo -e $TEXT_RESETa
+    echo -e $TEXT_RESET
     sudo reboot now
 fi
 
