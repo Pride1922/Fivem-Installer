@@ -1,3 +1,4 @@
+#!/bin/bash
 
 TEXT_RESET='\e[0m'
 TEXT_YELLOW='\e[0;33m'
