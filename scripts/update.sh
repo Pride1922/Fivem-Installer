@@ -7,11 +7,12 @@ function pause(){
 }
 ######################FUNCTIONS#################################################################
 
-
+######################COLOURS################
 TEXT_RESET='\e[0m'
 TEXT_YELLOW='\e[0;33m'
 TEXT_RED='\e[1;31m'
 TEXT_BLUE='\e[1;34m'
+#######################COLOURS###################
 
 ###################################SET TIMEZONE#################################################
 sudo timedatectl set-timezone Europe/Brussels
@@ -72,7 +73,9 @@ clear
 ##################FIVEM USER CREATED############################################################
 
 #######################INSTALL FIVEM#####################################################
-sudo -u fivem installfivem.sh
+cd /home/fivem/
+wget -O - https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/fivem.sh?token=ALQ6F66HXIRNQY7Y75PPKJLBZGORK | bash
+sudo -u fivem fivem.sh
 pause
 #######################FIVEM INSTALLED####################################################
 
