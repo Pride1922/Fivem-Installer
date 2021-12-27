@@ -7,10 +7,12 @@ TEXT_RED='\e[1;31m'
 TEXT_BLUE='\e[1;34m'
 #######################COLOURS###################
 
-
+##############Directories#########################
 mkdir ~/fivem_server
 mkdir ~/fivem_resources
 chown fivem:fivem /home/fivem
+
+#################Downloading fivem##########################
 url=https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/
 version=$(curl  -sS 'https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/' | grep OPTIONAL  | sort | tail -1 | sed -n 's/.*LATEST OPTIONAL.."*//p' | sed 's/.$//')
 echo -e $TEXT_YELLOW
