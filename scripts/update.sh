@@ -64,7 +64,7 @@ sudo useradd -m -p $password -s /bin/bash $username
 echo
 clear
 echo -e $TEXT_BLUE
-echo Thank you $username, we know have your login details.
+echo Thank you $username, we now have your login details.
 echo -e $TEXT_RESET
 usermod -aG sudo $username
 pause
