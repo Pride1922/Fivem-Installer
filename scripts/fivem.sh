@@ -38,5 +38,5 @@ echo "Removing the downloaded file"
 echo -e $TEXT_RESET
 rm fx.tar.xz
 echo -e $TEXT_BLUE
-echo "Installation finished.
+echo "Installation finished."
 echo -e $TEXT_RESET
