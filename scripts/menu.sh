@@ -1,7 +1,9 @@
 #!/bin/bash
 
 menu_option_one() {
-  echo "Hello John!!!"
+  sudo wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/install.sh
+  sudo chmod +x install.sh
+  sudo ./install.sh
 }
 
 menu_option_two() {
