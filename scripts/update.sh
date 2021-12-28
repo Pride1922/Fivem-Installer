@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #######################FUNCTIONS###############################################################
-function pause(){
- read -s -n 1 -p "Press any key to continue . . ."
- echo ""
+function pause() {
+    read -s -n 1 -p "Press any key to continue . . ."
+    echo ""
 }
 ######################FUNCTIONS#################################################################
 
@@ -19,7 +19,6 @@ sudo timedatectl set-timezone Europe/Brussels
 echo -e $TEXT_YELLOW
 echo 'Timezone changed to Europe/Brussels'
 echo -e $TEXT_RESET
-
 
 ###################################UPDATE STARTED################################################
 sudo apt-get update
@@ -92,21 +91,12 @@ pause
 sudo apt update
 sudo apt install curl -y
 sudo apt install mariadb-server -y
-######################
-################################MARIADB###################
-echo -e $TEXT_YELLOW
-echo 'Please create a password for the user root under Mariadb:'
-echo -e $TEXT_RESET
-read -sp 'Password:' SQLpassword
-mysql -u root <<-EOF
-UPDATE mysql.user SET Password=PASSWORD('$SQLpassword') WHERE User='root';
-DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
-DELETE FROM mysql.user WHERE User='';
-DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';
-FLUSH PRIVILEGES;
-EOF
+########################################################
 
-sudo sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mariadb.conf.d/50-server.cnf
+################################MARIADB###################
+wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/mariadb.sh
+sudo chmod +x mariadb.sh
+sudo ./mariadb.sh
 ##########################################################
 wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/fivem.sh -P /home/fivem/
 sudo chown fivem:fivem /home/fivem/fivem.sh
