@@ -1,23 +1,38 @@
 #!/bin/bash
 
+menu_option_one() {
+  echo "Hello John!!!"
+}
 
-PS3='Please enter your choice: '
-options=("Option 1" "Option 2" "Option 3" "Quit")
-select opt in "${options[@]}"
-do
-    case $opt in
-        "Option 1")
-            echo "you chose choice 1"
-            ;;
-        "Option 2")
-            echo "you chose choice 2"
-            ;;
-        "Option 3")
-            echo "you chose choice $REPLY which is $opt"
-            ;;
-        "Quit")
-            break
-            ;;
-        *) echo "invalid option $REPLY";;
-    esac
+menu_option_two() {
+  echo "Some super cool code by John."
+}
+
+press_enter() {
+  echo ""
+  echo -n "	Press Enter to continue "
+  read
+  clear
+}
+
+incorrect_selection() {
+  echo "Incorrect selection! Try again."
+}
+
+until [ "$selection" = "0" ]; do
+  clear
+  echo ""
+  echo "    	1  -  Full-install"
+  echo "    	2  -  Update Server"
+  echo "    	0  -  Exit"
+  echo ""
+  echo -n "  Enter selection: "
+  read selection
+  echo ""
+  case $selection in
+    1 ) clear ; menu_option_one ; press_enter ;;
+    2 ) clear ; menu_option_two ; press_enter ;;
+    0 ) clear ; exit ;;
+    * ) clear ; incorrect_selection ; press_enter ;;
+  esac
 done
