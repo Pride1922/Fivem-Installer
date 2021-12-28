@@ -98,7 +98,7 @@ clear
 echo -e $TEXT_RED
 echo 'Next we will install Mariadb. This is our database manager.'
 echo -e $TEXT_RESET
-Puase
+Pause
 wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/mariadb.sh
 sudo chmod +x mariadb.sh
 sudo ./mariadb.sh
