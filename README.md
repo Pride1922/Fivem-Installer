@@ -3,8 +3,8 @@ Script to automate linux server configuration and installation
 
 HOW TO USE:
 
-wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/install.sh
+sudo wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/menu.sh
 
-chmod +x install.sh
+sudo chmod +x menu.sh
 
-./install.sh
+sudo ./menu.sh
