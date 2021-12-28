@@ -1,2 +1,6 @@
 # Fivem-Installer
-Linux script to automate linux server configuration and installation
+Script to automate linux server configuration and installation
+
+HOW TO USE:
+
+COMING SOON!!
