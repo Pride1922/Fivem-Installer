@@ -118,6 +118,32 @@ sudo -u fivem ./fivem.sh
 pause
 #######################FIVEM INSTALLED####################################################
 
+#######################FIVEM SERVICE######################################################
+cat << EOF >/etc/systemd/system/fivem.service
+
+[Unit]
+Description=Fivem Server
+After=network.service
+[Service]
+WorkingDirectory=/home/fivem/fivem_resources/
+ExecStart=/home/fivem/fivem_server/run.sh
+KillMode=control-group
+[Install]
+WantedBy=default.target
+
+EOF
+
+
+clear
+echo -e $TEXT_RED
+echo 'Server is installed and ready to start.'
+echo 'On the next screen you will be asked to go to your browser and login with your cfx account and the pin.'
+echo -e $TEXT_RESET
+pause
+systemctl enable fivem.service
+systemctl start fivem.service
+#############################
+
 if [ -f /var/run/reboot-required ]; then
     echo -e $TEXT_RED_B
     echo 'Reboot required!'
