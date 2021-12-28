@@ -83,7 +83,7 @@ pause
 clear
 ##################FIVEM USER CREATED############################################################
 
-#######################INSTALL FIVEM#####################################################
+#######################INSTALL DEPENDENCY#####################################################
 ###Dependency####
 echo -e $TEXT_RED
 echo 'We need to install Curl.'
@@ -103,6 +103,8 @@ wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/ma
 sudo chmod +x mariadb.sh
 sudo ./mariadb.sh
 ##########################################################
+
+################################FIVEM###################
 wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/fivem.sh -P /home/fivem/
 sudo chown fivem:fivem /home/fivem/fivem.sh
 sudo chmod +x /home/fivem/fivem.sh
