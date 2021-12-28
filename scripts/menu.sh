@@ -4,6 +4,7 @@ menu_option_one() {
   sudo wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/install.sh
   sudo chmod +x install.sh
   sudo ./install.sh
+  rm install.sh
 }
 
 menu_option_two() {
