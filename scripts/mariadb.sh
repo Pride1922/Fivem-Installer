@@ -63,3 +63,4 @@ echo "Please write them down. You are going to need it to configure txadmin"
 echo -e $TEXT_RESET
 systemctl restart mariadb
 pause
+rm mariadb.sh

@@ -141,7 +141,9 @@ echo 'On the next screen you will be asked to go to your browser and login with 
 echo -e $TEXT_RESET
 pause
 systemctl enable fivem.service
-systemctl start fivem.service
+cd /home/fivem/fivem_server
+sudo - fivem ./run.sh
+#systemctl start fivem.service
 #############################
 
 if [ -f /var/run/reboot-required ]; then
