@@ -76,7 +76,8 @@ echo 'We are gonna create an user without privileges: fivem'
 echo -e $TEXT_RESET
 sudo useradd -m -p fivem -s /bin/bash fivem
 echo -e $TEXT_RED
-echo 'User fivem is created. Password is also fivem'
+echo 'User fivem is created. Password is also fivem.'
+echo 'Please write it down. You are going to need it later.'
 echo -e $TEXT_RESET
 pause
 clear
@@ -85,15 +86,19 @@ clear
 #######################INSTALL FIVEM#####################################################
 ###Dependency####
 echo -e $TEXT_RED
-echo 'We need to install Curl and Mariadb.'
+echo 'We need to install Curl.'
 echo -e $TEXT_RESET
 pause
 sudo apt update
 sudo apt install curl -y
-sudo apt install mariadb-server -y
 ########################################################
 
 ################################MARIADB###################
+clear
+echo -e $TEXT_RED
+echo 'Next we will install Mariadb. This is our database manager.'
+echo -e $TEXT_RESET
+Puase
 wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/mariadb.sh
 sudo chmod +x mariadb.sh
 sudo ./mariadb.sh
