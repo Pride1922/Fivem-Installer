@@ -142,7 +142,7 @@ echo -e $TEXT_RESET
 pause
 systemctl enable fivem.service
 cd /home/fivem/fivem_server
-sudo - fivem ./run.sh
+sudo -u fivem ./run.sh
 #systemctl start fivem.service
 #############################
 
