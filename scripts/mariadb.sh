@@ -16,6 +16,7 @@ function pause() {
 
 sudo apt update
 sudo apt install mariadb-server -y
+clear
 echo -e $TEXT_YELLOW
 echo 'Please create a password for the user root under Mariadb:'
 echo -e $TEXT_RESET
@@ -30,6 +31,7 @@ EOF
 
 sudo sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mariadb.conf.d/50-server.cnf
 
+clear
 echo -e $TEXT_YELLOW
 echo 'Mariadb installed and configured with safe options.'
 echo -e $TEXT_RESET
@@ -59,4 +61,5 @@ echo -e $TEXT_YELLOW
 echo "Username: $sqlusername with the password $sqluserpassword created."
 echo "Please write them down. You are going to need it to configure txadmin"
 echo -e $TEXT_RESET
+systemctl restart mariadb
 pause

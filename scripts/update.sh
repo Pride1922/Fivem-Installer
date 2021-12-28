@@ -98,13 +98,18 @@ clear
 echo -e $TEXT_RED
 echo 'Next we will install Mariadb. This is our database manager.'
 echo -e $TEXT_RESET
-Pause
+pause
 wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/mariadb.sh
 sudo chmod +x mariadb.sh
 sudo ./mariadb.sh
 ##########################################################
 
 ################################FIVEM###################
+clear
+echo -e $TEXT_RED
+echo 'Next we will install fivem. We will create the folders for you.'
+echo -e $TEXT_RESET
+pause
 wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/fivem.sh -P /home/fivem/
 sudo chown fivem:fivem /home/fivem/fivem.sh
 sudo chmod +x /home/fivem/fivem.sh
