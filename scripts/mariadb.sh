@@ -14,15 +14,18 @@ function pause() {
 }
 ##############################PAUSE###########################################################
 
-sudo apt update
-sudo apt install mariadb-server -y
 clear
 echo -e $TEXT_YELLOW
 echo 'Please create a password for the user root under Mariadb:'
 echo -e $TEXT_RESET
 read -sp 'Password:' SQLpassword
+apt update
+debconf-set-selections <<< 'mariadb-server-10.3 mysql-server/root_password password $SQLpassword'
+debconf-set-selections <<< 'mariadb-server-10.3 mysql-server/root_password_again password $SQLpassword'
+apt update
+apt install mariadb-server-10.3 -y
+
 mysql -u root <<-EOF
-SET Password FOR 'root'@'localhost' = PASSWORD('$SQLpassword');
 DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
 DELETE FROM mysql.user WHERE User='';
 DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';
