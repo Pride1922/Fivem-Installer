@@ -1,9 +1,9 @@
 #!/bin/bash
 ######################HOW TO RUN################################################
 
-wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/grafana.sh
-sudo chmod +x grafana.sh
-./grafana.sh
+#wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/grafana.sh
+#sudo chmod +x grafana.sh
+#./grafana.sh
 
 ######################HOW TO RUN################################################
 
