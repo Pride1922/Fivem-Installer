@@ -14,8 +14,9 @@ TEXT_RED='\e[1;31m'
 TEXT_BLUE='\e[1;34m'
 #######################COLOURS###################
 
+clear
 echo -e $TEXT_YELLOW
-echo 'Let's install the APT packages for grafana'
+echo 'Lets install the APT packages for grafana'
 echo -e $TEXT_RESET
 pause
 
@@ -27,7 +28,7 @@ echo "deb https://packages.grafana.com/enterprise/deb beta main" | sudo tee -a /
 
 clear
 echo -e $TEXT_YELLOW
-echo 'Packages should be ready to install. Let's update the server...'
+echo 'Packages should be ready to install. Lets update the server...'
 echo -e $TEXT_RESET
 pause
 
@@ -35,7 +36,7 @@ sudo apt-get update
 
 clear
 echo -e $TEXT_YELLOW
-echo 'Everything should be up to date. Let's install grafana enterprise'
+echo 'Everything should be up to date. Lets install grafana enterprise'
 echo -e $TEXT_RESET
 pause
 
@@ -59,9 +60,11 @@ sudo wget -O api.php "https://github.com/lingej/pnp-metrics-api/raw/master/appli
 sudo sh -c "sed -i '/Require valid-user/a\        Require ip 127.0.0.1 ::1' /etc/apache2/sites-enabled/pnp4nagios.conf"
 sudo systemctl restart apache2.service
 
+
 clear
+ip4=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
 echo -e $TEXT_YELLOW
-echo 'All done. Please navigate to http://192.168.2.73/:3000 and create a user.'
+echo 'All done. Please navigate to http://'$ip4':3000 and create a user.'
 echo -e $TEXT_RESET
 pause
 
