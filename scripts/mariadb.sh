@@ -55,8 +55,7 @@ echo -e $TEXT_RESET
 read -sp 'Password:' sqluserpassword
 
 mysql -u root <<-EOF
-CREATE USER ${sqlusername}@'%' IDENTIFIED BY '${sqluserpassword}';
-GRANT ALL ON *.* TO '${sqlusername}'@'%' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO '${sqlusername}'@'%'    IDENTIFIED BY '${sqluserpassword}' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 EOF
 
