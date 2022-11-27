@@ -23,7 +23,7 @@ apt update
 debconf-set-selections <<< 'mariadb-server-10.3 mysql-server/root_password password $SQLpassword'
 debconf-set-selections <<< 'mariadb-server-10.3 mysql-server/root_password_again password $SQLpassword'
 apt update
-apt install mariadb-server-10.3 -y
+apt install mariadb-server-10.6 -y
 
 mysql -u root <<-EOF
 DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
