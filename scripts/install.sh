@@ -59,10 +59,8 @@ echo -e $TEXT_YELLOW
 echo 'Administrator created. Please type in password:'
 echo -e $TEXT_RESET
 read -sp 'Password:' password
-sudo su -c "useradd $username -s /bin/bash
-sudo chpasswd << 'END'
-$username:$password
-END
+sudo adduser $username  --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
+echo "$username:$password" | sudo chpasswd
 echo
 clear
 echo -e $TEXT_BLUE
@@ -74,16 +72,25 @@ pause
 
 ###############CREATE FIVEM USER###############################################################
 clear
-echo -e $TEXT_YELLOW
-echo 'We are gonna create an user without privileges: fivem'
-echo -e $TEXT_RESET
-sudo su -c "useradd fivem -s /bin/bash
-sudo chpasswd << 'END'
-fivem:fivem
-END
 echo -e $TEXT_RED
-echo 'User fivem is created. Password is also fivem.'
-echo 'Please write it down. You are going to need it later.'
+echo 'Lets create an user without privileges. This is your FTP user.'
+echo -e $TEXT_RESET
+
+echo -e $TEXT_RESETecho -e $TEXT_YELLOW
+echo 'Adding new user: Please input username.'
+echo -e $TEXT_RESET
+read -p 'Username:' username_fivem
+echo -e $TEXT_YELLOW
+echo 'Administrator created. Please type in password:'
+echo -e $TEXT_RESET
+read -sp 'Password:' password_fivem
+sudo adduser $username_fivem  --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
+echo "$username_fivem:$password_fivem" | sudo chpasswd
+echo
+clear
+echo -e $TEXT_BLUE
+echo Thank you $username, we now have your login details.
+echo Please write it down: Username: $username_fivem Password: $password_fivem You need this login to connect using filezila.
 echo -e $TEXT_RESET
 pause
 clear
