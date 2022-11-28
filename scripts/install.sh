@@ -104,6 +104,17 @@ sudo chmod +x mariadb.sh
 sudo ./mariadb.sh
 ##########################################################
 
+################################VSFTPD###################
+clear
+echo -e $TEXT_RED
+echo 'Next we will install VSFTPD. This is our FTP Server which will allow you to remote access your files.'
+echo -e $TEXT_RESET
+pause
+wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/vsftpd.sh
+sudo chmod +x vsftpd.sh
+sudo ./vsftpd.sh
+##########################################################
+
 ################################FIVEM###################
 clear
 echo -e $TEXT_RED
