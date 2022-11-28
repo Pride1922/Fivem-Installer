@@ -40,6 +40,7 @@ EOF
 
 sudo systemctl restart vsftpd
 
+clear
 echo -e $TEXT_BLUE
 echo You can now access your files using Filezilla. 
 echo -e $TEXT_RESET
