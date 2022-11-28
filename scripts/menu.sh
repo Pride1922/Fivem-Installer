@@ -4,11 +4,14 @@ menu_option_one() {
   sudo wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/install.sh
   sudo chmod +x install.sh
   sudo ./install.sh
-  rm install.sh
+  sudo rm install.sh
 }
 
 menu_option_two() {
-  echo "Some super cool code by John."
+  sudo wget https://raw.githubusercontent.com/Pride1922/Fivem-Installer/main/scripts/update.sh
+  sudo chmod +x update.sh
+  sudo ./update.sh
+  sudo rm update.sh
 }
 
 press_enter() {
@@ -26,7 +29,7 @@ until [ "$selection" = "0" ]; do
   clear
   echo ""
   echo "    	1  -  Full-install"
-  echo "    	2  -  Update Server"
+  echo "    	2  -  Update Server (Linux, Fivem and Txadmin) "
   echo "    	0  -  Exit"
   echo ""
   echo -n "  Enter selection: "
