@@ -59,7 +59,10 @@ echo -e $TEXT_YELLOW
 echo 'Administrator created. Please type in password:'
 echo -e $TEXT_RESET
 read -sp 'Password:' password
-sudo useradd -m -p $password -s /bin/bash $username
+sudo su -c "useradd $username -s /bin/bash
+sudo chpasswd << 'END'
+$username:$password
+END
 echo
 clear
 echo -e $TEXT_BLUE
@@ -74,7 +77,10 @@ clear
 echo -e $TEXT_YELLOW
 echo 'We are gonna create an user without privileges: fivem'
 echo -e $TEXT_RESET
-sudo useradd -m -p fivem -s /bin/bash fivem
+sudo su -c "useradd fivem -s /bin/bash
+sudo chpasswd << 'END'
+fivem:fivem
+END
 echo -e $TEXT_RED
 echo 'User fivem is created. Password is also fivem.'
 echo 'Please write it down. You are going to need it later.'
