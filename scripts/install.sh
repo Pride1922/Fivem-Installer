@@ -89,8 +89,8 @@ echo "$username_fivem:$password_fivem" | sudo chpasswd
 echo
 clear
 echo -e $TEXT_BLUE
-echo Thank you $username, we now have your login details.
-echo Please write it down: Username: $username_fivem Password: $password_fivem You need this login to connect using filezila.
+echo Thank you $username_fivem, we now have your login details.
+echo Please write it down!! Username: $username_fivem Password: $password_fivem You need this login to connect using filezila.
 echo -e $TEXT_RESET
 pause
 clear
