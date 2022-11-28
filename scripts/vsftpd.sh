@@ -45,3 +45,4 @@ echo -e $TEXT_BLUE
 echo You can now access your files using Filezilla. 
 echo -e $TEXT_RESET
 pause
+rm vsftpd.sh
