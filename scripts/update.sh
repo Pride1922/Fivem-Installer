@@ -91,3 +91,4 @@ echo
 echo "All done - Starting Fivem Server"
 echo -e $TEXT_RESET
 systemctl start fivem
+sudo rm update.sh
