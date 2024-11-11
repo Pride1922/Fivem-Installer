@@ -98,6 +98,11 @@ cd /home/fivem/
 sudo -u fivem ./fivem.sh
 pause
 
+# Set ownership for FiveM directories and files
+echo -e "${TEXT_YELLOW}Setting correct ownership for FiveM directories...${TEXT_RESET}"
+sudo chown -R fivem:fivem /home/fivem/fivem_server
+sudo chown -R fivem:fivem /home/fivem/fivem_resources
+
 # Configure FiveM as a systemd Service
 echo -e "${TEXT_YELLOW}Configuring FiveM as a systemd service...${TEXT_RESET}"
 cat << EOF | sudo tee /etc/systemd/system/fivem.service > /dev/null
